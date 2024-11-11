@@ -47,7 +47,6 @@ ortho4xp.diff: Ortho4XP
 Ortho4XP:
 	git clone https://github.com/oscarpilote/Ortho4XP.git
 	cd $@ 
-	git pull --tags
 	git config --global user.email "abc@myeamil.com" && git config --global user.name "Your Name"
 	cd $@ && git checkout v1.31
 	cd $@ && patch -p1 -u < ../ortho4xp.diff && git add . && git commit -m "Patched for Ortho4XP v1.31"
