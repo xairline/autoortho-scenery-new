@@ -51,6 +51,9 @@ Ortho4XP:
 	git config --global user.email "abc@myeamil.com" && git config --global user.name "Your Name"
 	cd $@ && git checkout v1.31
 	cd $@ && patch -p1 -u < ../ortho4xp.diff && git add . && git commit -m "Patched for Ortho4XP v1.31"
+	cd $@ && git pull origin d3bf07859c28a6ba5a90b600dd5d227366de4c43 --rebase || true
+	# Loop to resolve conflicts by skipping commits
+	cd $@ && git rebase --skip
 	cp extract_overlay.py $@/.
 	cp Ortho4XP.cfg $@/.
 	mkdir $@/tmp
